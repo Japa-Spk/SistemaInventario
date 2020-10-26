@@ -41,6 +41,12 @@
           </ul>
         </div>
       </li>
+      <li class="nav-item{{ $activePage == 'productos' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('productos') }}">
+          <i class="material-icons">content_paste</i>
+            <p>{{ __('Productos') }}</p>
+        </a>
+      </li>
       <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('table') }}">
           <i class="material-icons">content_paste</i>

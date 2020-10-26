@@ -17,10 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('/prueba', function () {
-    return 'Ruta de prueba';
-});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -32,6 +28,12 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('table-list', function () {
 		return view('pages.table_list');
 	})->name('table');
+
+
+	Route::get('productos', function () {
+		return view('pages.productos');
+	})->name('productos');
+
 
 	Route::get('typography', function () {
 		return view('pages.typography');
