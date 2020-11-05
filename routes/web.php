@@ -30,10 +30,11 @@ Route::group(['middleware' => 'auth'], function () {
 	})->name('table');
 
 
-	Route::get('productos', function () {
-		return view('pages.productos');
-	})->name('productos');
-
+	Route::get('/productos', 'ProductoController@index')->name('productos');
+	Route::post('/productos', 'ProductoController@store')->name('productos');
+	Route::get('/productos/{id}/edit', 'ProductoController@edit')->name('productosedit');
+	Route::post('/productos/{id}/edit', 'ProductoController@update')->name('productosedit');
+	Route::post('/productos/{id}/delete', 'ProductoController@eliminar')->name('productoseliminar');
 
 	Route::get('typography', function () {
 		return view('pages.typography');
