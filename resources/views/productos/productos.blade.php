@@ -16,6 +16,7 @@
           </div>
           @include('productos.crearproducto')
           @include('productos.editarproducto')
+          @include('productos.imagenproducto')
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">
@@ -59,10 +60,13 @@
                     </td>
                     <td>
                       <!-- <button type="button" hreft="" class="btn btn-default">Editar</button> -->
-                      <a href="" class="btn btn-default" id="editProducto" data-toggle="modal" data-target='#editproductoModal' data-id="{{ $producto->id }}">Editar</a>
+                      
                       <form method="post" action="{{ url('productos/'.$producto->id.'/delete') }}">
                         {{ csrf_field() }}
+                        <a href="" class="btn btn-success" id="imgProducto" data-toggle="modal" data-target='#imgproductoModal' data-id="{{ $producto->id }}">imagen</a>
+                        <a href="" class="btn btn-default" id="editProducto" data-toggle="modal" data-target='#editproductoModal' data-id="{{ $producto->id }}">Editar</a>
                         <button type="submit" class="btn btn-danger">Eliminar</a>
+                  
                       </form>
                     </td>
                   </tr>

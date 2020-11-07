@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Producto;
+use App\imagenes;
+use DebugBar\DebugBar;
 use \stdClass;
 
 class ProductoController extends Controller
@@ -82,12 +84,38 @@ class ProductoController extends Controller
         }
     }
 
-    public function eliminar(Request $request, $id){
+    public function eliminar($id){
         $producto = Producto::find($id);
         $producto->delete();
         return redirect('/productos');
     }
 
+
+    public function img($id){
+        $producto = Producto::find($id);
+        $id_imagen = $producto->id_imagen;
+        $imagen = imagenes::find($id_imagen);
+        return response()->json(['imagen' => $imagen]);
+    }
+
+    public function saveimg(Request $request, $id){
+        $file = $request->file('file');
+        $path = public_path(). '/images/productos';
+        $filename = $file->getClientOriginalName();
+        $filetype = $file->getType();
+        $filesize = $file->getSize()*pow(10,-6);
+        $file->move($path, $filename);
+        
+        $imagen = new imagenes();
+        $imagen->link = $filename;
+        $imagen->tamaño = $filesize;
+        $imagen->tipo = $filetype;
+        $imagen->save();
+        $producto = Producto::find($id);
+        $producto->id_imagen = $imagen->id;
+        $producto->save();
+        return redirect('/productos');
+    }
 
 
 }

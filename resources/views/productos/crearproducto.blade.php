@@ -60,18 +60,6 @@
                                     <textarea class="form-control" name="descripcion" id="descripcion" rows="3" placeholder="{{ __('Descripcion de producto...') }}"></textarea>
                                 </div>
                             </div>
-
-                            <div class="bmd-form-group{{ $errors->has('foto') ? ' has-danger' : '' }} mt-3">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="material-icons">add_a_photo</i>
-                                        </span>
-                                    </div>
-                                    <input type="file" name="foto" class="form-control">
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                     <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button> -->

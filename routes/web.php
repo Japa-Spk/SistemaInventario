@@ -35,6 +35,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/productos/{id}/edit', 'ProductoController@edit')->name('productosedit');
 	Route::post('/productos/{id}/edit', 'ProductoController@update')->name('productosedit');
 	Route::post('/productos/{id}/delete', 'ProductoController@eliminar')->name('productoseliminar');
+	Route::get('/productos/{id}/img', 'ProductoController@img')->name('productosimagen');
+	Route::post('/productos/{id}/img', 'ProductoController@saveimg')->name('productosaveimg');
 
 	Route::get('typography', function () {
 		return view('pages.typography');
