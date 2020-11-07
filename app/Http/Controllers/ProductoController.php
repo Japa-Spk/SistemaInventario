@@ -77,7 +77,7 @@ class ProductoController extends Controller
             $producto->unidad_medida = $request->input('unidad_medida');
             $producto->valor_umedida = $request->input('valor_medida');
             $producto->descripcion = $request->input('descripcion');
-            $producto->id_imagen = 0;
+            $producto->id_imagen = 2;
             $producto->save();
             return redirect('/productos');
 
