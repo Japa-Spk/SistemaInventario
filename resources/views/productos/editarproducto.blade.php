@@ -85,7 +85,7 @@
             var id = $(this).data('id');
             console.log(id)
             $.get('productos/' + id + '/edit', function(data) {
-                console.log("datos traidos de el id->", data);
+               // console.log("datos traidos de el id->", data);
                 $('#eid').val(data.producto.id);
                 $('#enombre').val(data.producto.nombre);
                 $('#eunidad_medida').val(data.producto.unidad_medida);

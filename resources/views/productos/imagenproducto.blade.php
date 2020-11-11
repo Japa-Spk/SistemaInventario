@@ -38,6 +38,13 @@
             event.preventDefault();
             var idimg = $(this).data('id');
             $('#iid').val(idimg);
+            $.get('productos/' + idimg + '/img', function(data) {
+                console.log("datos img->", data);
+                var image = new Image();
+                var src = data.imagen; //Esta es la variable que contiene la url de una imagen ejemplo, luego puedes poner la que quieras
+                image.src = src;
+                $('#preview').append(image);
+            });
 
         });
 

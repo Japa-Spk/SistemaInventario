@@ -95,7 +95,8 @@ class ProductoController extends Controller
         $producto = Producto::find($id);
         $id_imagen = $producto->id_imagen;
         $imagen = imagenes::find($id_imagen);
-        return response()->json(['imagen' => $imagen]);
+        $path = public_path().'/images/productos/'.$imagen->link;
+        return response()->json(['imagen' =>$path]);
     }
 
     public function saveimg(Request $request, $id){
