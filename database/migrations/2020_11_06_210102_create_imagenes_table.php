@@ -13,13 +13,13 @@ class CreateImagenesTable extends Migration
      */
     public function up()
     {
-        Schema::create('imagenes', function (Blueprint $table) {
-            $table->id();
-            $table->string('link',500);
-            $table->decimal('tamaño',7,3);
-            $table->string('tipo',5);
-            //$table->timestamps();
-        });
+        // Schema::create('imagenes', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string('link',500);
+        //     $table->decimal('tamaño',7,3);
+        //     $table->string('tipo',5);
+        //     //$table->timestamps();
+        // });
     }
 
     /**

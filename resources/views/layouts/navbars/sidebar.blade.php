@@ -43,10 +43,25 @@
       </li> -->
       <li class="nav-item{{ $activePage == 'tabla_productos' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('productos') }}">
-          <i class="material-icons">content_paste</i>
+          <i class="material-icons">outdoor_grill</i>
             <p>{{ __('Productos') }}</p>
         </a>
       </li>
+
+      <li class="nav-item{{ $activePage == 'tabla_provedores' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('provedores') }}">
+          <i class="material-icons">business</i>
+            <p>{{ __('Provedores') }}</p>
+        </a>
+      </li>
+
+      <li class="nav-item{{ $activePage == 'tabla_inventarios' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('inventarios') }}">
+          <i class="material-icons">content_paste</i>
+            <p>{{ __('Inventarios') }}</p>
+        </a>
+      </li>
+      
       <!-- <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('table') }}">
           <i class="material-icons">content_paste</i>

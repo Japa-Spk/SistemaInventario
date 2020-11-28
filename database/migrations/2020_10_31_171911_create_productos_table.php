@@ -13,10 +13,10 @@ class CreateProductosTable extends Migration
      */
     public function up()
     {
-        Schema::create('productos', function (Blueprint $table) {
-            $table->id();
-            //$table->timestamps();
-        });
+        // Schema::create('productos', function (Blueprint $table) {
+        //     $table->id();
+        //     //$table->timestamps();
+        // });
     }
 
     /**

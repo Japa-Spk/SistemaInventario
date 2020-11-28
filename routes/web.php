@@ -20,7 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
@@ -29,7 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
 		return view('pages.table_list');
 	})->name('table');
 
-
+//CONTROLADOR Y METODOS DE PRODUCTOS
 	Route::get('/productos', 'ProductoController@index')->name('productos');
 	Route::post('/productos', 'ProductoController@store')->name('productos');
 	Route::get('/productos/{id}/edit', 'ProductoController@edit')->name('productosedit');
@@ -37,7 +37,20 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/productos/{id}/delete', 'ProductoController@eliminar')->name('productoseliminar');
 	Route::get('/productos/{id}/img', 'ProductoController@img')->name('productosimagen');
 	Route::post('/productos/{id}/img', 'ProductoController@saveimg')->name('productosaveimg');
-
+//CONTROLADOR Y METODOS DE PROVEDORES
+Route::get('/provedores', 'ProvedorController@index')->name('provedores');
+Route::post('/provedores', 'ProvedorController@store')->name('provedores');
+Route::get('/provedores/{id}/edit', 'ProvedorController@edit')->name('provedoresedit');
+Route::post('/provedores/{id}/edit', 'ProvedorController@update')->name('provedoresedit');
+Route::post('/provedores/{id}/delete', 'ProvedorController@eliminar')->name('provedoreseliminar');
+//__________________________________________________________________________________________________
+//CONTROLADOR Y METODOS DE INVENTARIOS
+Route::get('/inventarios', 'InventarioController@index')->name('inventarios');
+Route::post('/inventarios', 'InventarioController@store')->name('inventarios');
+Route::get('/inventarios/{id}/edit', 'InventarioController@edit')->name('inventariosedit');
+Route::post('/inventarios/{id}/edit', 'InventarioController@update')->name('inventariosedit');
+Route::post('/inventarios/{id}/delete', 'InventarioController@eliminar')->name('inventarioseliminar');
+//__________________________________________________________________________________________________
 	Route::get('typography', function () {
 		return view('pages.typography');
 	})->name('typography');
