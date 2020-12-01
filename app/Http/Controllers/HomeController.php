@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Producto;
 
 
 class HomeController extends Controller
@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $productos = Producto::all();
+        return view('tienda.tienda')->with(compact('productos'));
     }
 }

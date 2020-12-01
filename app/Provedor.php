@@ -8,4 +8,7 @@ class Provedor extends Model
 {
     //
     protected $table = 'provedores';
+    public function inventarios(){
+        return $this->hasMany(Inventario::class);
+    }
 }

@@ -10,7 +10,7 @@
           <div class="card-header card-header-primary">
             <h4 class="card-title ">Inventarios</h4>
             <p class="card-category"> Lista de los inventarios</p>
-            <button type="button" class="btn btn-default btn-round btn-lg" data-toggle="modal" data-target="#inventarioModal">
+            <button type="button" class="btn btn-default btn-round btn-lg" data-toggle="modal" data-target="#inventarioModal" id="createInventario">
               <i class="material-icons">add_circle</i> {{ __('Agregar inventario') }}
             </button>
           </div>
@@ -46,7 +46,7 @@
                       {{ $inventario->id }}
                     </td>
                     <td>
-                      {{ $inventario->producto_id }}
+                      {{ $inventario->producto->nombre }}
                     </td>
                     <td>
                       {{ $inventario->cantidad }}
@@ -55,7 +55,7 @@
                       {{ $inventario->valor_unitario }}
                     </td>
                     <td>
-                      {{ $inventario->provedor_id }}
+                      {{ $inventario->provedor->nombre }}
                     </td>
                     <td>
                       <!-- <button type="button" hreft="" class="btn btn-default">Editar</button> -->

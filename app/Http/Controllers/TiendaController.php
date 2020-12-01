@@ -9,14 +9,14 @@ use App\Producto;
 use DebugBar\DebugBar;
 use \stdClass;
 
-class InventarioController extends Controller
+class TiendaController extends Controller
 {
     //
 
     public function index()
     {
-        $inventarios = Inventario::all();
-        return view('inventarios.inventarios')->with(compact('inventarios'));
+        $productos = Producto::all();
+        return view('tienda.tienda')->with(compact('productos'));
     }
 
     public function cargProductos(){

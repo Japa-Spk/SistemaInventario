@@ -13,10 +13,13 @@ class CreateProductosTable extends Migration
      */
     public function up()
     {
-        // Schema::create('productos', function (Blueprint $table) {
-        //     $table->id();
-        //     //$table->timestamps();
-        // });
+        Schema::create('productos', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('imagen_id');
+            $table->foreign('imagen_id')->references('id')->on('imagenes');
+            //$table->timestamps();
+        });
+
     }
 
     /**

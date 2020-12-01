@@ -46,10 +46,19 @@ Route::post('/provedores/{id}/delete', 'ProvedorController@eliminar')->name('pro
 //__________________________________________________________________________________________________
 //CONTROLADOR Y METODOS DE INVENTARIOS
 Route::get('/inventarios', 'InventarioController@index')->name('inventarios');
+Route::get('/inventarios/productos', 'InventarioController@cargProductos')->name('inventarios');
 Route::post('/inventarios', 'InventarioController@store')->name('inventarios');
 Route::get('/inventarios/{id}/edit', 'InventarioController@edit')->name('inventariosedit');
 Route::post('/inventarios/{id}/edit', 'InventarioController@update')->name('inventariosedit');
 Route::post('/inventarios/{id}/delete', 'InventarioController@eliminar')->name('inventarioseliminar');
+//__________________________________________________________________________________________________
+//CONTROLADOR Y METODOS DE TIENDA
+Route::get('/tienda', 'TiendaController@index')->name('tienda');
+Route::get('/tienda/productos', 'TiendaController@cargProductos')->name('tienda');
+Route::post('/tienda', 'TiendaController@store')->name('tienda');
+Route::get('/tienda/{id}/edit', 'TiendaController@edit')->name('tiendaedit');
+Route::post('/tienda/{id}/edit', 'TiendaController@update')->name('tiendaedit');
+Route::post('/tienda/{id}/delete', 'TiendaController@eliminar')->name('tiendaeliminar');
 //__________________________________________________________________________________________________
 	Route::get('typography', function () {
 		return view('pages.typography');
